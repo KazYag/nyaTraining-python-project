@@ -1,0 +1,38 @@
+<mxfile host="app.diagrams.net" modified="2025-10-07T00:00:00.000Z" agent="GPT-5 Template">
+  <diagram id="dfd_level0" name="Battery Temperature Control - Level 0 DFD">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="can" value="CAN Bus" style="shape=rectangle;fillColor=#fce5cd;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="logic" value="Battery Temp Control Logic" style="shape=process;rounded=1;fillColor=#d1f0d1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="220" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="act" value="Actuator" style="shape=rectangle;fillColor=#fce5cd;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="conf" value="Threshold Config" style="shape=datastore;fillColor=#f0f0f0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="state" value="State Variables" style="shape=datastore;fillColor=#f0f0f0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="230" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <!-- Data Flows -->
+        <mxCell id="f1" source="can" target="logic" edge="1" parent="1" value="Temperature Data">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="f2" source="logic" target="act" edge="1" parent="1" value="Control Output">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="f3" source="logic" target="conf" edge="1" parent="1" value="Read/Write Thresholds">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="f4" source="logic" target="state" edge="1" parent="1" value="Update State">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
