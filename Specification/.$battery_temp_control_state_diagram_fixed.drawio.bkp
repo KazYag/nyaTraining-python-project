@@ -1,0 +1,47 @@
+<mxfile host="app.diagrams.net" modified="2025-10-07T00:00:00.000Z" agent="GPT-5 Template">
+  <diagram id="uml_state" name="Battery Temperature Control - State Diagram">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="state_normal" value="Normal Monitoring" style="rounded=1;fillColor=#cce5ff;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="state_high" value="High Temp Control" style="rounded=1;fillColor=#cce5ff;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="state_low" value="Low Temp Control" style="rounded=1;fillColor=#cce5ff;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="180" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="state_opt" value="Optimal Charge Guidance" style="rounded=1;fillColor=#cce5ff;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="260" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="state_safe" value="Safe Stop" style="rounded=1;fillColor=#f8d7da;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Transitions -->
+        <mxCell id="e1" source="state_normal" target="state_high" edge="1" parent="1" value="Temp &gt; HighThreshold">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" source="state_normal" target="state_low" edge="1" parent="1" value="Temp &lt; LowThreshold">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" source="state_normal" target="state_opt" edge="1" parent="1" value="Target ≠ Current">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" source="state_high" target="state_normal" edge="1" parent="1" value="Temp ≤ Threshold - Hys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" source="state_low" target="state_normal" edge="1" parent="1" value="Temp ≥ Threshold + Hys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" source="state_opt" target="state_normal" edge="1" parent="1" value="Temp ≈ Target">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" source="state_high" target="state_safe" edge="1" parent="1" value="SensorFault / CellFault">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
