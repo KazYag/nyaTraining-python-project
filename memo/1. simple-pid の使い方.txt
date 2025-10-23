@@ -1,0 +1,119 @@
+ 1. simple-pid の使い方
+
+  simple-pidは、一度PIDコントローラーのオブジェクトを作成し、その後はループ内でそのオブジェクトを関数のように呼び出すのが基本です。
+
+    1 from simple_pid import PID
+    2
+    3 class BatteryTemperatureController:
+    4     def __init__(self, pid_config):
+    5         # __init__で、パラメータを渡してPIDオブジェクトを一度だけ作成します
+    6         self.pid_controller = PID(
+    7             pid_config.Kp, pid_config.Ki, pid_config.Kd,
+    8             setpoint=pid_config.setpoint,
+    9             output_limits=pid_config.output_limits
+   10         )
+   11
+   12     def handle_high_temp_state(self, current_temp):
+   13         # 状態処理メソッドの中で、現在の温度を渡してPIDオブジェクトを呼び出します
+   14         control_output = self.pid_controller(current_temp)
+   15
+   16         print(f"高温制御中... PID出力: {control_output}")
+   17         # この control_output を使ってアクチュエーターを制御します
+  transitionsは、状態遷移のルールを定義し、それを自分のクラス（この場合はBatteryTemperatureController）に組み込むことで動作します。
+
+   1. 状態と遷移ルールを定義します。
+   2. Machineオブジェクトを作成し、どのオブジェクト（model=self）に状態遷移を組み込むか指定します。
+   3. 「状態に入った時（`on_enter`）」に、私たちが定義した`handle_..._state`メソッドが自動的に呼ばれるように紐付けします。これが最も重要な部分です。
+
+    1 from transitions import Machine
+    2 from status_control import BatteryState
+    3
+    4 class BatteryTemperatureController:
+    5     def __init__(self, params, pid_config):
+    6         # (simple-pidの初期化は省略)
+    7
+    8         # 状態のリスト
+    9         states = [s for s in BatteryState]
+   10
+   11         # 遷移のリスト（[トリガー, 遷移元, 遷移先]）
+   12         transitions = [
+   13             {'trigger': 'detect_high_temp', 'source': BatteryState.STATE_NORMAL_MONITOR, 'dest': BatteryState.STATE_HIGH_TEMP_CTRL},
+   14             {'trigger': 'detect_low_temp', 'source': BatteryState.STATE_NORMAL_MONITOR, 'dest': BatteryState.STATE_LOW_TEMP_CTRL},
+   15             # ... 他の遷移ルール
+   16             {'trigger': 'return_to_monitor', 'source': '*', 'dest': BatteryState.STATE_NORMAL_MONITOR} # どの状態からでも戻る
+   17         ]
+   18
+   19         # 状態マシン(Machine)オブジェクトを作成
+   20         self.machine = Machine(model=self, states=states, transitions=transitions, initial=BatteryState.STATE_INIT)
+   21
+   22         # 状態に入った時に呼び出すメソッドを登録
+   23         self.machine.on_enter_STATE_HIGH_TEMP_CTRL('handle_high_temp_state')
+   24         self.machine.on_enter_STATE_LOW_TEMP_CTRL('handle_low_temp_state')
+   25         # ...
+   26
+   27     def update_and_decide(self, temp):
+   28         # このメソッドが「司令塔」の役割
+   29         # 温度をチェックして、適切なトリガーを引く
+   30         if self.state == BatteryState.STATE_NORMAL_MONITOR:
+   31             if temp > self.params.HIGH_ALERT_THRESHOLD:
+   32                 self.detect_high_temp() # トリガーを引くと、状態が自動で遷移し、handle_high_temp_stateが呼ばれる
+   33
+   34     def handle_high_temp_state(self):
+   35         # このメソッドは transitions によって自動的に呼ばれる
+   36         print("高温状態に入りました。")
+   37         # PID制御などのアクションを実行
+  1. オブジェクトとの関連付け
+
+   * 関数 (Function)
+      独立しており、特定のオブジェクトに所属しません。いつでも自由に 関数名() の形で呼び出せます。
+
+   1     # 関数の定義
+   2     def print_hello():
+   3         print("こんにちは！")
+   4
+   5     # 関数の呼び出し
+   6     print_hello()
+
+   * メソッド (Method)
+      クラスの一部として定義され、そのクラスから作られたオブジェクト（インスタンス）に関連付けられています。必ず「オブジェクト.メソッド名()」という形で呼び出します。
+
+    1     # クラスとメソッドの定義
+    2     class Dog:
+    3         def bark(self):
+    4             print("ワン！")
+    5
+    6     # Dogクラスからオブジェクトを作成
+    7     my_dog = Dog()
+    8
+    9     # my_dogオブジェクトのメソッドを呼び出す
+   10     my_dog.bark()
+
+  2. 第一引数 self の有無
+
+   * メソッドを定義する際、第一引数には慣習的に self という名前の引数を必ず書きます。
+   * この self には、そのメソッドを呼び出したオブジェクト自身が自動的に渡されます。これにより、メソッドはそのオブジェクトが持つ他の情報（変数など）にアクセスできます。
+   * 関数には、このような自動的に渡される特別な第一引数はありません。
+
+  コード例での比較
+
+    1 # これは「関数」
+    2 def add_numbers(a, b):
+    3   return a + b
+    4
+    5 # クラスの定義
+    6 class Calculator:
+    7   # これは「メソッド」
+    8   def add_numbers(self, a, b):
+    9     # self を使って何かすることも可能（この例では使っていませんが）
+   10     return a + b
+   11
+   12 # --- 呼び出し方の違い ---
+   13
+   14 # 関数の呼び出し
+   15 result1 = add_numbers(10, 20)
+   16 print(f"関数の結果: {result1}")
+   17
+   18 # メソッドの呼び出し
+   19 my_calculator = Calculator()  # まずオブジェクトを作成
+   20 result2 = my_calculator.add_numbers(10, 20) # オブジェクトを通して呼び出す
+   21 print(f"メソッドの結果: {result2}")
