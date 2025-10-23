@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram id="dfd_level0" name="Battery Temperature Control - Level 0 DFD">
-    <mxGraphModel dx="1988" dy="999" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2268" dy="1175" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -24,16 +24,16 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="f2" value="加熱/冷却/停止/運転" parent="1" source="logic" target="act" edge="1">
+        <mxCell id="f2" value="加熱/冷却/停止/運転：調整値" parent="1" source="logic" target="act" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="f4" value="状態遷移" parent="1" source="logic" target="state" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="gV4ivacfT20c8QTqMqW6-1" value="バッテリ温度制御(&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;; font-size: 14pt; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;BatteryTemperatureControl.c&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;align=left;verticalAlign=top;fontSize=19;" parent="1" vertex="1">
-          <mxGeometry x="310" y="480" width="910" height="880" as="geometry" />
+        <mxCell id="gV4ivacfT20c8QTqMqW6-1" value="バッテリ温度制御(&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;; font-size: 14pt; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;BatteryTemperatureControl.py&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;align=left;verticalAlign=top;fontSize=19;" parent="1" vertex="1">
+          <mxGeometry x="290" y="490" width="940" height="930" as="geometry" />
         </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-11" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.3;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#09090A;" parent="1" source="gV4ivacfT20c8QTqMqW6-2" edge="1">
+        <mxCell id="K3a5HmwYM3yJjZjsRP28-11" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#09090A;" parent="1" source="gV4ivacfT20c8QTqMqW6-2" edge="1" target="K3a5HmwYM3yJjZjsRP28-22">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="460" y="547.9999999999998" as="targetPoint" />
           </mxGeometry>
@@ -46,57 +46,92 @@
         <mxCell id="gV4ivacfT20c8QTqMqW6-2" value="CAN" style="shape=rectangle;fillColor=#fce5cd;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-210" y="490" width="170" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="gV4ivacfT20c8QTqMqW6-22" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" parent="1" source="gV4ivacfT20c8QTqMqW6-4" edge="1">
+        <mxCell id="w4X6AmdWGYj43J_tz3g--45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-4" target="w4X6AmdWGYj43J_tz3g--19">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="740" y="685" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="690" y="695" />
+              <mxPoint x="690" y="1015" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--49" value="加熱/冷却" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--45">
+          <mxGeometry x="-0.8863" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--52" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-4" target="K3a5HmwYM3yJjZjsRP28-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--62" value="目標温度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--52">
+          <mxGeometry x="-0.2372" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-4" target="K3a5HmwYM3yJjZjsRP28-36">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="717" />
+              <mxPoint x="800" y="873" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--67" value="現在温度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--57">
+          <mxGeometry x="-0.2288" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gV4ivacfT20c8QTqMqW6-4" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;&lt;font face=&quot;Helvetica&quot; style=&quot;&quot;&gt;最適充電誘導&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;language:ja;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;mso-line-break-override:none;&lt;br/&gt;word-break:normal;punctuation-wrap:hanging&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;;&quot;&gt;&lt;font&gt;is_temp_normal()&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="450" y="650" width="160" height="70" as="geometry" />
+          <mxGeometry x="450" y="650" width="160" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="gV4ivacfT20c8QTqMqW6-50" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" parent="1" source="gV4ivacfT20c8QTqMqW6-14" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="740" y="855" as="targetPoint" />
+        <mxCell id="w4X6AmdWGYj43J_tz3g--48" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-15" target="w4X6AmdWGYj43J_tz3g--19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--51" value="加熱" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--48">
+          <mxGeometry x="-0.614" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gV4ivacfT20c8QTqMqW6-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="gV4ivacfT20c8QTqMqW6-14" edge="1">
+        <mxCell id="w4X6AmdWGYj43J_tz3g--54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-15" target="K3a5HmwYM3yJjZjsRP28-33">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="740" y="685" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="650" y="838" />
-              <mxPoint x="650" y="685" />
+              <mxPoint x="730" y="997" />
+              <mxPoint x="730" y="675" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="gV4ivacfT20c8QTqMqW6-15" target="K3a5HmwYM3yJjZjsRP28-33" edge="1">
+        <mxCell id="w4X6AmdWGYj43J_tz3g--64" value="目標温度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--54">
+          <mxGeometry x="-0.7919" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-15" target="K3a5HmwYM3yJjZjsRP28-36">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="650" y="1015" />
-              <mxPoint x="650" y="685" />
+              <mxPoint x="800" y="1033" />
+              <mxPoint x="800" y="873" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-42" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="K3a5HmwYM3yJjZjsRP28-39" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="610" y="1030" as="sourcePoint" />
-            <mxPoint x="740" y="1030" as="targetPoint" />
+        <mxCell id="w4X6AmdWGYj43J_tz3g--65" value="現在温度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--61">
+          <mxGeometry x="-0.3423" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gV4ivacfT20c8QTqMqW6-15" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;低温制御判定&lt;/p&gt;&lt;p style=&quot;language:ja;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;mso-line-break-override:none;&lt;br/&gt;word-break:normal;punctuation-wrap:hanging&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;;&quot;&gt;&lt;font&gt;is_temp_low()&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="gV4ivacfT20c8QTqMqW6-15" value="&lt;p style=&quot;text-align: left; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;低温制御判定&lt;/p&gt;&lt;p style=&quot;language:ja;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;mso-line-break-override:none;&lt;br/&gt;word-break:normal;punctuation-wrap:hanging&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;;&quot;&gt;&lt;font&gt;is_temp_low()&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="450" y="980" width="160" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="OiuqpF2scuzAS8LPqLpI-17" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;entryX=0.014;entryY=0.414;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="gV4ivacfT20c8QTqMqW6-16" target="OiuqpF2scuzAS8LPqLpI-16" edge="1">
+        <mxCell id="w4X6AmdWGYj43J_tz3g--38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-16" target="OiuqpF2scuzAS8LPqLpI-16">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1440" y="840" as="targetPoint" />
+            <mxPoint x="1099.9999999999995" y="670" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OiuqpF2scuzAS8LPqLpI-18" value="加熱/冷却" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="OiuqpF2scuzAS8LPqLpI-17" vertex="1" connectable="0">
-          <mxGeometry x="-0.3858" y="-2" relative="1" as="geometry">
+        <mxCell id="w4X6AmdWGYj43J_tz3g--40" value="調整値" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--38">
+          <mxGeometry x="-0.3651" y="-2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gV4ivacfT20c8QTqMqW6-16" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;加熱冷却処理&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;&lt;span style=&quot;font-family: Aptos; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font&gt;simple_pid.py&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=module;align=center;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="970" y="810" width="160" height="70" as="geometry" />
+          <mxGeometry x="1020" y="838" width="160" height="70" as="geometry" />
         </mxCell>
         <mxCell id="gV4ivacfT20c8QTqMqW6-27" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="gV4ivacfT20c8QTqMqW6-2" target="gV4ivacfT20c8QTqMqW6-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -230,26 +265,50 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OiuqpF2scuzAS8LPqLpI-16" value="Actuator" style="shape=rectangle;fillColor=#fce5cd;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1450" y="805" width="160" height="100" as="geometry" />
+          <mxGeometry x="1450" y="965" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="OiuqpF2scuzAS8LPqLpI-23" value="状態情報" style="shape=datastore;fillColor=#f0f0f0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1410" y="505" width="120" height="110" as="geometry" />
+          <mxGeometry x="1450" y="505" width="120" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" target="OiuqpF2scuzAS8LPqLpI-16" edge="1">
+        <mxCell id="w4X6AmdWGYj43J_tz3g--47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-14" target="w4X6AmdWGYj43J_tz3g--19">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1440" y="850" as="targetPoint" />
-            <mxPoint x="1200" y="1194.9999999999998" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="1390" y="1200" />
-              <mxPoint x="1390" y="880" />
+              <mxPoint x="690" y="855" />
+              <mxPoint x="690" y="1015" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--50" value="冷却" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--47">
+          <mxGeometry x="-0.7704" y="2" relative="1" as="geometry">
+            <mxPoint x="-4" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-14" target="K3a5HmwYM3yJjZjsRP28-33">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="837" />
+              <mxPoint x="730" y="675" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--63" value="目標温度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--53">
+          <mxGeometry x="-0.6899" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--58" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="gV4ivacfT20c8QTqMqW6-14" target="K3a5HmwYM3yJjZjsRP28-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--66" value="現在温度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--58">
+          <mxGeometry x="0.3165" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gV4ivacfT20c8QTqMqW6-14" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;&lt;font style=&quot;&quot;&gt;高温制御判定&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;language:ja;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;mso-line-break-override:none;&lt;br/&gt;word-break:normal;punctuation-wrap:hanging&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;;&quot;&gt;&lt;font&gt;is_temp_high()&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;miterlimit=4;" parent="1" vertex="1">
           <mxGeometry x="450" y="820" width="160" height="70" as="geometry" />
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-7" value="停止/稼働" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="1290" y="1200" as="geometry" />
+          <mxGeometry x="1310" y="1195" as="geometry" />
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-22" value="バッテリ温度状態" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="515" width="120" height="70" as="geometry" />
@@ -258,7 +317,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-23" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; vertical-align: middle; word-break: normal;&quot;&gt;&lt;font face=&quot;Helvetica&quot; style=&quot;&quot;&gt;バッテリ温度状態遷移&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;language:ja;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;mso-line-break-override:none;&lt;br/&gt;word-break:normal;punctuation-wrap:hanging&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;BIZ UDゴシック&amp;quot;;&quot;&gt;&lt;font&gt;transition.py&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="810" y="535" width="160" height="50" as="geometry" />
+          <mxGeometry x="1020" y="535" width="160" height="50" as="geometry" />
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-24" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="K3a5HmwYM3yJjZjsRP28-22" target="K3a5HmwYM3yJjZjsRP28-23" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -308,18 +367,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-33" value="目標温度" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
-          <mxGeometry x="740" y="650" width="120" height="70" as="geometry" />
+          <mxGeometry x="820" y="640" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-36" value="&lt;span style=&quot;text-align: left;&quot;&gt;方向：冷却&lt;/span&gt;" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
-          <mxGeometry x="740" y="810" width="120" height="70" as="geometry" />
+        <mxCell id="K3a5HmwYM3yJjZjsRP28-36" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;現在温度&lt;/span&gt;&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
+          <mxGeometry x="830" y="838" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="K3a5HmwYM3yJjZjsRP28-33" target="gV4ivacfT20c8QTqMqW6-16" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-39" value="&lt;span style=&quot;text-align: left;&quot;&gt;方向：加熱&lt;/span&gt;" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
-          <mxGeometry x="740" y="1000" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-40" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=35;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="K3a5HmwYM3yJjZjsRP28-39" target="gV4ivacfT20c8QTqMqW6-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-43" value="&lt;span style=&quot;text-align: left;&quot;&gt;警告出力有無&lt;/span&gt;&lt;div style=&quot;text-align: left;&quot;&gt;警告メッセージ&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
@@ -337,8 +390,10 @@
         <mxCell id="K3a5HmwYM3yJjZjsRP28-50" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;センサ異常フラグ&lt;/span&gt;&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" parent="1" vertex="1">
           <mxGeometry x="1080" y="1280" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="K3a5HmwYM3yJjZjsRP28-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.922;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="K3a5HmwYM3yJjZjsRP28-50" target="OiuqpF2scuzAS8LPqLpI-16" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="K3a5HmwYM3yJjZjsRP28-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;" parent="1" source="K3a5HmwYM3yJjZjsRP28-50" target="OiuqpF2scuzAS8LPqLpI-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1400" y="880" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="K3a5HmwYM3yJjZjsRP28-53" value="停止" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="K3a5HmwYM3yJjZjsRP28-52" vertex="1" connectable="0">
           <mxGeometry x="-0.5018" y="-1" relative="1" as="geometry">
@@ -346,7 +401,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="gV4ivacfT20c8QTqMqW6-79" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 29, 89);&quot;&gt;（予約）&lt;/font&gt;" style="html=1;whiteSpace=wrap;fillColor=#4E4E4E;fontColor=#333333;strokeColor=#666666;opacity=50;gradientColor=none;fillStyle=hatch;align=left;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="410" y="1100" width="802.5" height="240" as="geometry" />
+          <mxGeometry x="377.5" y="1110" width="822.5" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="K3a5HmwYM3yJjZjsRP28-45" target="OiuqpF2scuzAS8LPqLpI-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--21" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="w4X6AmdWGYj43J_tz3g--19" target="OiuqpF2scuzAS8LPqLpI-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--22" value="加熱・冷却" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="w4X6AmdWGYj43J_tz3g--21">
+          <mxGeometry x="0.3181" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w4X6AmdWGYj43J_tz3g--19" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;div style=&quot;line-height: 19px; white-space: pre;&quot;&gt;&lt;font style=&quot;color: rgb(9, 9, 10);&quot;&gt;温度変化モード&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;left=0;" vertex="1" parent="1">
+          <mxGeometry x="830" y="980" width="120" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

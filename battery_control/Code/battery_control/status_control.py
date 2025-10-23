@@ -1,4 +1,3 @@
-# status_control.py
 from enum import Enum
 
 class BatteryState(Enum):
